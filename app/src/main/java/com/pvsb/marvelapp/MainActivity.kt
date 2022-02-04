@@ -1,8 +1,7 @@
 package com.pvsb.marvelapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.pvsb.marvelapp.R
+import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
