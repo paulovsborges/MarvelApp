@@ -1,4 +1,4 @@
-package com.example.marvelapp
+package com.pvsb.marvelapp
 
 import org.junit.Test
 
