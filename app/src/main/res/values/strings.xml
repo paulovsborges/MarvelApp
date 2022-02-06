@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MarvelApp</string>
+    <string name="character_bottom_nav_menu">characters</string>
+    <string name="offline_bottom_nav_menu">Offline</string>
 </resources>

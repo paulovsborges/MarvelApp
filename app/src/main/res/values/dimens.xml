@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?><!--Naming Pattern-->
+<!--component_property_value_dp-->
+<resources>
+    <dimen name="default_card_view_size">100dp</dimen>
+    <dimen name="button_horizontal_margin_24dp">24dp</dimen>
+    <dimen name="recyclerview_padding_16dp">16dp</dimen>
+    <dimen name="cardview_elevation_2dp">2dp</dimen>
+    <dimen name="cardview_cornerradius_8dp">8dp</dimen>
+    <dimen name="cardview_strokewidth_2dp">2dp</dimen>
+    <dimen name="cardview_radius_2dp">6dp</dimen>
+
+    <!-- dimens for spacing and margins  -->
+
+    <dimen name="margin_small_6dp">6dp</dimen>
+    <dimen name="margin_small_5dp">5dp</dimen>
+    <dimen name="margin_small_4dp">4dp</dimen>
+    <dimen name="padding_medium_10dp">10dp</dimen>
+
+    <!-- dimens for images sizes   -->
+    <dimen name="large_size_200dp">200dp</dimen>
+    <dimen name="medium_size_150dp">150dp</dimen>
+    <dimen name="medium_size_130dp">130dp</dimen>
+    <dimen name="medium_size_120dp">120dp</dimen>
+    <dimen name="little_size_70dp">70dp</dimen>
+    <dimen name="imageview_on_recycler_width_68dp">68dp</dimen>
+    <dimen name="imageview_on_recycler_heigth_68dp">68dp</dimen>
+    <dimen name="textview_on_recycler_margin_start_8dp">8dp</dimen>
+
+    <dimen name="layout_padding_8dp">8dp</dimen>
+
+    <!--    dimens for text size-->
+    <dimen name="character_details_name">30sp</dimen>
+
+</resources>
+
