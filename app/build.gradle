@@ -7,6 +7,8 @@ plugins {
     id 'kotlin-parcelize'
 }
 
+apply from: '../config/detekt/detekt.gradle'
+
 android {
     compileSdk 32
 
