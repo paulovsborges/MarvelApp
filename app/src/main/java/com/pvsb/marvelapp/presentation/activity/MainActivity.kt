@@ -12,8 +12,6 @@ import com.pvsb.marvelapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var navController: NavController
-    private lateinit var appbarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,17 +21,6 @@ class MainActivity : AppCompatActivity() {
         val navHost =
             supportFragmentManager.findFragmentById(R.id.navHostContainer) as NavHostFragment
 
-        navController = navHost.navController
-
-        appbarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.characters,
-                R.id.favorites,
-                R.id.about,
-            )
-        )
-
-        binding.bottomNav.setupWithNavController(navController)
-
+        binding.bottomNav.setupWithNavController(navHost.navController)
     }
 }
