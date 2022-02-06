@@ -1,6 +1,7 @@
 package com.pvsb.marvelapp.framework.di
 
 import com.pvsb.marvelapp.BuildConfig
+import com.pvsb.core.data.network.interceptor.MarvelApiInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,13 +16,15 @@ import java.util.concurrent.TimeUnit
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
+    private const val TIMEOUT_UNIT = 15L
+
     @Provides
     fun okHttpProvider(): OkHttpClient =
         OkHttpClient().newBuilder().apply {
-            connectTimeout(15, TimeUnit.SECONDS)
-            readTimeout(15, TimeUnit.SECONDS)
-            writeTimeout(15, TimeUnit.SECONDS)
-                .addInterceptor(MarvelApiInterceptor())
+            connectTimeout(TIMEOUT_UNIT, TimeUnit.SECONDS)
+            readTimeout(TIMEOUT_UNIT, TimeUnit.SECONDS)
+            writeTimeout(TIMEOUT_UNIT, TimeUnit.SECONDS)
+            addInterceptor(MarvelApiInterceptor(BuildConfig.PUBLIC_KEY, BuildConfig.PRIVATE_KEY))
 
             val logInterceptor: HttpLoggingInterceptor = HttpLoggingInterceptor().apply {
                 level = HttpLoggingInterceptor.Level.BODY
@@ -42,4 +45,5 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
 }
