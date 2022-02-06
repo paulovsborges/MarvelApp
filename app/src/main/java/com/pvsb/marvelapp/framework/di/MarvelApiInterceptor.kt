@@ -1,5 +1,6 @@
-package com.pvsb.core.data.network.interceptor
+package com.pvsb.marvelapp.framework.di
 
+import com.pvsb.marvelapp.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.math.BigInteger
@@ -9,8 +10,8 @@ import java.util.*
 class MarvelApiInterceptor : Interceptor {
 
     private companion object {
-        const val PUBLIC_KEY = "3827cfb8b6ff40a51f3fed47938660c2"
-        const val PRIVATE_KEY = "b2d65258840e5d37dca4eadd9b1b78241b4d82a2"
+        const val PUBLIC_KEY = BuildConfig.PUBLIC_KEY
+        const val PRIVATE_KEY = BuildConfig.PRIVATE_KEY
         const val RADIX = 16
         const val PAD_LENGTH = 32
 
@@ -26,7 +27,7 @@ class MarvelApiInterceptor : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val originalRequest = chain.request()
-        val url = originalRequest.url().newBuilder()
+        val url = originalRequest.url.newBuilder()
             .addQueryParameter("apikey", PUBLIC_KEY)
             .addQueryParameter("ts", ts)
             .addQueryParameter("hash", hash)
