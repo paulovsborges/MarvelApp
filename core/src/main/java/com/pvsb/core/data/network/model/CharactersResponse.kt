@@ -1,6 +1,6 @@
 package com.pvsb.core.data.network.model
 
-internal data class DataWrapperResponse(
+data class DataWrapperResponse(
     val code: Int,
     val status: String,
     val copyright: String,
@@ -9,7 +9,7 @@ internal data class DataWrapperResponse(
     val data: ContainerResponse
 )
 
-internal data class ContainerResponse(
+data class ContainerResponse(
     val offset: Int,
     val limit: Int,
     val total: Int,
@@ -17,13 +17,13 @@ internal data class ContainerResponse(
     val results: List<CharactersResponse>
 )
 
-internal data class CharactersResponse(
+data class CharactersResponse(
     val id: Int,
     val name: String,
     val thumbnail: ImagesResponse
 )
 
-internal data class ImagesResponse(
+data class ImagesResponse(
     val path: String,
     val extension: String
 )
