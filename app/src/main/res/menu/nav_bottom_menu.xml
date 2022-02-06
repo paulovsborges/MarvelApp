@@ -9,8 +9,14 @@
         />
     <item
         android:id="@+id/comicsFragment"
-        android:icon="@drawable/ic_comics"
+        android:icon="@drawable/ic_avengers"
         android:title="@string/offline_bottom_nav_menu"
+
+        />
+    <item
+        android:id="@+id/aboutFragment"
+        android:icon="@drawable/ic_info"
+        android:title="@string/about_bottom_nav_menu"
 
         />
 

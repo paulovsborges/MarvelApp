@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
-import com.pvsb.marvelapp.R
 import com.pvsb.marvelapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
