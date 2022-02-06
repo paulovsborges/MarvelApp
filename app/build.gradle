@@ -9,6 +9,10 @@ plugins {
 
 apply from: '../config/detekt/detekt.gradle'
 
+def apiKeyPropertiesFile = rootProject.file("apiKey.properties")
+def apiKeyProperties = new Properties()
+apiKeyProperties.load(new FileInputStream(apiKeyPropertiesFile))
+
 android {
     compileSdk 32
 
@@ -20,6 +24,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "PUBLIC_KEY", apiKeyProperties['PUBLIC_KEY']
+        buildConfigField "String", "PRIVATE_KEY", apiKeyProperties['PRIVATE_KEY']
+        buildConfigField "String", "BASE_URL", '"https://gateway.marvel.com/v1/public/"'
     }
 
     buildTypes {
@@ -36,14 +44,14 @@ android {
         jvmTarget = '1.8'
     }
 
-    buildFeatures{
+    buildFeatures {
         viewBinding true
     }
 }
 
 dependencies {
 
-    implementation project (':core')
+    implementation project(':core')
 
     // AndroidX
     implementation 'androidx.core:core-ktx:1.6.0'
