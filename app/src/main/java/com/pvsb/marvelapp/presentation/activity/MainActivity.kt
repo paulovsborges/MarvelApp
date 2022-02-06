@@ -2,9 +2,7 @@ package com.pvsb.marvelapp.presentation.activity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.pvsb.marvelapp.R
 import com.pvsb.marvelapp.databinding.ActivityMainBinding
