@@ -1,4 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
+
     <style name="Theme.MarvelApp" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">#6D0202</item>
         <item name="colorPrimaryVariant">@color/red_500</item>
@@ -8,4 +9,13 @@
         <item name="colorOnSecondary">@color/black</item>
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
     </style>
+
+    <style name="Theme.MarvelApp.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.MarvelApp.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.MarvelApp.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
