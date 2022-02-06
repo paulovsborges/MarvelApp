@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupWithNavController
+import com.pvsb.marvelapp.R
 import com.pvsb.marvelapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,15 +20,20 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navHost = supportFragmentManager.findFragmentById(
-            androidx.navigation.fragment.R.id.nav_host_fragment_container
-        ) as NavHostFragment
+        val navHost =
+            supportFragmentManager.findFragmentById(R.id.navHostContainer) as NavHostFragment
 
         navController = navHost.navController
+
         appbarConfiguration = AppBarConfiguration(
             setOf(
-
+                R.id.characters,
+                R.id.favorites,
+                R.id.about,
             )
         )
+
+        binding.bottomNav.setupWithNavController(navController)
+
     }
 }
