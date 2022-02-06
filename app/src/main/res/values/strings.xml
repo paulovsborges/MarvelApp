@@ -3,7 +3,7 @@
     <string name="character_bottom_nav_menu">characters</string>
     <string name="offline_bottom_nav_menu">Offline</string>
     <string name="about_bottom_nav_menu">About</string>
-    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_splash">Marvel App</string>
    <string name="characters_search_hint">Character name</string>
 
 </resources>
