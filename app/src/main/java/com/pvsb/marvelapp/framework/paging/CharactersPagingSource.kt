@@ -3,15 +3,15 @@ package com.pvsb.marvelapp.framework.paging
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.pvsb.core.data.repository.CharactersRemoteDataSource
-import com.pvsb.core.domain.model.Characters
+import com.pvsb.core.domain.model.Character
 import com.pvsb.marvelapp.framework.network.model.DataWrapperResponse
 
 class CharactersPagingSource(
     private val remote: CharactersRemoteDataSource<DataWrapperResponse>,
     private val query: String
-) : PagingSource<Int, Characters>() {
+) : PagingSource<Int, Character>() {
 
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Characters> {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Character> {
         return try {
             val offSet = params.key ?: 0
             val queries = hashMapOf(
@@ -44,7 +44,7 @@ class CharactersPagingSource(
         }
     }
 
-    override fun getRefreshKey(state: PagingState<Int, Characters>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, Character>): Int? {
         return state.anchorPosition?.let { anchorPosition ->
             val anchorPage = state.closestPageToPosition(anchorPosition)
             anchorPage?.prevKey?.plus(OFFSET) ?: anchorPage?.nextKey?.minus(OFFSET)

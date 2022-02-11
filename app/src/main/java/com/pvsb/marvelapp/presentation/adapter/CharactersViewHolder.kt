@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.pvsb.core.domain.model.Characters
+import com.pvsb.core.domain.model.Character
 import com.pvsb.marvelapp.R
 import com.pvsb.marvelapp.databinding.CharactersCardMainBinding
 
@@ -14,7 +14,7 @@ class CharactersViewHolder(private val binding: CharactersCardMainBinding) :
     private val name = binding.characterName
     private val image = binding.characterImage
 
-    fun bind(item: Characters) {
+    fun bind(item: Character) {
 
         name.text = item.name
         Glide.with(binding.root)
