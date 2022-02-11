@@ -1,4 +1,4 @@
-package com.pvsb.core.data.network.model
+package com.pvsb.marvelapp.framework.network.model
 
 data class DataWrapperResponse(
     val code: Int,
