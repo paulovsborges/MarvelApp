@@ -9,7 +9,6 @@ import com.pvsb.core.domain.model.Character
 import com.pvsb.core.usecase.CharactersUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
 
 @HiltViewModel
@@ -17,9 +16,9 @@ class CharactersVIewModel @Inject constructor(
     private val useCase: CharactersUseCase
 ) : ViewModel() {
 
-    fun charactersPagingData(query: String): Flow<PagingData<Character>> = flow {
-        useCase(
-            CharactersUseCase.CharactersParams(
+    fun charactersPagingData(query: String): Flow<PagingData<Character>> {
+       return  useCase(
+           CharactersUseCase.CharactersParams(
                 query,
                 getPagingConfig()
             )

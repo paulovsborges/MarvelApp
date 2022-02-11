@@ -15,9 +15,11 @@ import dagger.hilt.components.SingletonComponent
 interface RepositoryModule {
 
     @Binds
-    fun characterRepository(repository: CharactersRepositoryImpl) : CharactersRepository
+    fun characterRepository(repository: CharactersRepositoryImpl): CharactersRepository
 
     @Binds
-    fun remoteDataSource(datasource: RemoteCharactersDataSource): CharactersRemoteDataSource<DataWrapperResponse>
+    fun remoteDataSource(
+        datasource: RemoteCharactersDataSource
+    ): CharactersRemoteDataSource<DataWrapperResponse>
 
 }
