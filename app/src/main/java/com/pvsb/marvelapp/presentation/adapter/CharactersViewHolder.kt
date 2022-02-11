@@ -1,0 +1,38 @@
+package com.pvsb.marvelapp.presentation.adapter
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.pvsb.core.domain.model.Characters
+import com.pvsb.marvelapp.R
+import com.pvsb.marvelapp.databinding.CharactersCardMainBinding
+
+class CharactersViewHolder(private val binding: CharactersCardMainBinding) :
+    RecyclerView.ViewHolder(binding.root) {
+
+    private val name = binding.characterName
+    private val image = binding.characterImage
+
+    fun bind(item: Characters) {
+
+        name.text = item.name
+        Glide.with(binding.root)
+            .load(item.image)
+            .fallback(R.drawable.ic_avengers)
+            .into(image)
+    }
+
+    companion object {
+
+        fun inflate(parent: ViewGroup): CharactersViewHolder {
+            val binding = CharactersCardMainBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+            return CharactersViewHolder(binding)
+        }
+    }
+}
+
