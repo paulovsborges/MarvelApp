@@ -19,7 +19,8 @@ class CharactersViewHolder(private val binding: CharactersCardMainBinding) :
         name.text = item.name
         Glide.with(binding.root)
             .load(item.image)
-            .fallback(R.drawable.ic_avengers)
+            .placeholder(R.drawable.ic_avengers)
+            .centerCrop()
             .into(image)
     }
 

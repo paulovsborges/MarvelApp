@@ -17,6 +17,6 @@ object CharactersResponseMapper {
         }
 
     private fun characterImage(source: ImagesResponse): String {
-        return "${source.path}/portrait_incredible.${source.extension}"
+        return "${source.path}/standard_amazing.${source.extension}".replace("http", "https")
     }
 }
