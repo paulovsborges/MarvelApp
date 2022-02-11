@@ -1,4 +1,4 @@
-package com.pvsb.marvelapp.presentation.adapter
+package com.pvsb.marvelapp.presentation.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

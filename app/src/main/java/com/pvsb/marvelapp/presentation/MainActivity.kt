@@ -1,4 +1,4 @@
-package com.pvsb.marvelapp.presentation.activity
+package com.pvsb.marvelapp.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

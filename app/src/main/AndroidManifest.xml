@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarvelApp">
         <activity
-            android:name=".presentation.activity.SplashActivity"
+            android:name=".presentation.SplashActivity"
             android:exported="true"
             android:label="@string/title_activity_splash"
             android:theme="@style/Theme.MarvelApp.NoActionBar">
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".presentation.activity.MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true" />
     </application>
 </manifest>

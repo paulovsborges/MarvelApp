@@ -1,13 +1,16 @@
-package com.pvsb.marvelapp.presentation.fragment
+package com.pvsb.marvelapp.presentation.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import com.pvsb.marvelapp.databinding.FragmentCharactersBinding
-import com.pvsb.marvelapp.presentation.adapter.MainAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class CharactersFragment : Fragment() {
@@ -15,6 +18,7 @@ class CharactersFragment : Fragment() {
     private var _binding: FragmentCharactersBinding? = null
     private val binding get() = _binding!!
     private val mAdapter = MainAdapter()
+    private val viewModel: CharactersVIewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +32,13 @@ class CharactersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         onEnter()
+
+        lifecycleScope.launch {
+            viewModel.charactersPagingData("")
+                .collect { pagingData ->
+                    mAdapter.submitData(pagingData)
+                }
+        }
     }
 
     private fun onEnter() {

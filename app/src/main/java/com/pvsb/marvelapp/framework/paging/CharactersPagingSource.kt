@@ -40,8 +40,8 @@ class CharactersPagingSource @Inject constructor(
                 prevKey = null,
                 nextKey = nextKey
             )
-        } catch (e: Exception) {
-            LoadResult.Error(e)
+        } catch (exception: Exception) {
+            LoadResult.Error(exception)
         }
     }
 
