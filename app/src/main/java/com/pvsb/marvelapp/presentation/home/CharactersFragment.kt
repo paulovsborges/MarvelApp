@@ -4,12 +4,15 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.paging.LoadState
 import com.pvsb.marvelapp.databinding.FragmentCharactersBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -32,7 +35,16 @@ class CharactersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         onEnter()
+    }
 
+    private fun onEnter() {
+
+        initAdapter()
+        handleState()
+        fetchData()
+    }
+
+    private fun fetchData() {
         lifecycleScope.launch {
             viewModel.charactersPagingData("")
                 .collect { pagingData ->
@@ -41,16 +53,46 @@ class CharactersFragment : Fragment() {
         }
     }
 
-    private fun onEnter() {
-
-        initAdapter()
-    }
-
     private fun initAdapter() {
 
         binding.homeRecycler.apply {
             adapter = mAdapter
             setHasFixedSize(true)
         }
+    }
+
+    private fun handleState() {
+
+        lifecycleScope.launch {
+            mAdapter.loadStateFlow.collectLatest { state ->
+                binding.viewFlipperCHaracters.displayedChild =
+
+                    when (state.refresh) {
+                        is LoadState.Loading -> {
+                            setUpShimmer(true)
+                            FLIPPER_CHILD_LOAD
+                        }
+                        is LoadState.NotLoading -> {
+                            setUpShimmer(false)
+                            FLIPPER_CHILD_CHARACTERS
+                        }
+                        is LoadState.Error -> FLIPPER_CHILD_ERROR
+                    }
+            }
+        }
+    }
+
+    private fun setUpShimmer(visible: Boolean) {
+        binding.includeLoadingState.shimmerCharacters.apply {
+            isVisible = visible
+            if (visible) startShimmer()
+            else stopShimmer()
+        }
+    }
+
+    companion object {
+        const val FLIPPER_CHILD_LOAD = 0
+        const val FLIPPER_CHILD_CHARACTERS = 1
+        const val FLIPPER_CHILD_ERROR = 2
     }
 }

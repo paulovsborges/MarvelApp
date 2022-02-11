@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardCharacterMain"
+    android:layout_width="@dimen/medium_size_150dp"
+    android:layout_height="250dp"
+    android:layout_margin="@dimen/recyclerview_padding_16dp"
+    android:background="@color/gray_200"
+    android:foreground="?attr/selectableItemBackgroundBorderless">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/characterImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/medium_size_130dp"
+            android:contentDescription="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/gray_200"
+            />
+
+        <View
+            android:id="@+id/divisor"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin_small_6dp"
+            android:background="@color/white_500"
+            app:layout_constraintTop_toBottomOf="@id/characterImage" />
+
+        <TextView
+            android:id="@+id/characterName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/padding_medium_10dp"
+            android:fontFamily="@font/regular_font"
+            android:textAllCaps="true"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:textColor="@color/black_500"
+            android:textStyle="bold"
+            android:layout_marginHorizontal="@dimen/margin_medium_20dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/divisor"
+            tools:text="vision" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="@dimen/padding_medium_10dp"
+        android:layout_height="@dimen/margin_small_5dp"
+        android:background="@color/white_500"
+        android:rotationX="30"
+        android:rotationY="120"
+        android:scaleX="8"
+        android:scaleY="7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

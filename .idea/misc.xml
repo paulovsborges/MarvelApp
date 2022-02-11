@@ -12,11 +12,14 @@
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/drawable/ic_search.xml" value="0.2445" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/activity_main.xml" value="0.3728205128205128" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/activity_splash.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/characters_card_main.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/characters_card_recycler.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/favorites_card.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/fragment_about.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/fragment_characters.xml" value="0.3645833333333333" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/fragment_favorites.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/include_view_characters_loading.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/shimmer_layout_character.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/menu/nav_bottom_menu.xml" value="0.37864583333333335" />
       </map>
     </option>
