@@ -7,8 +7,9 @@ import com.pvsb.core.data.repository.CharactersRepository
 import com.pvsb.core.domain.model.Character
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class CharactersUseCase(
+class CharactersUseCase @Inject constructor(
     private val charactersRepository: CharactersRepository
 ) : PagingUseCase<CharactersUseCase.CharactersParams, Character>() {
 

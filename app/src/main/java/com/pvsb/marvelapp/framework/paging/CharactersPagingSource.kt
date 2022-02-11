@@ -5,8 +5,9 @@ import androidx.paging.PagingState
 import com.pvsb.core.data.repository.CharactersRemoteDataSource
 import com.pvsb.core.domain.model.Character
 import com.pvsb.marvelapp.framework.network.model.DataWrapperResponse
+import javax.inject.Inject
 
-class CharactersPagingSource(
+class CharactersPagingSource @Inject constructor(
     private val remote: CharactersRemoteDataSource<DataWrapperResponse>,
     private val query: String
 ) : PagingSource<Int, Character>() {
