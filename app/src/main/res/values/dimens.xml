@@ -11,6 +11,7 @@
 
     <!-- dimens for spacing and margins  -->
 
+    <dimen name="margin_medium_20dp">20dp</dimen>
     <dimen name="margin_small_6dp">6dp</dimen>
     <dimen name="margin_small_5dp">5dp</dimen>
     <dimen name="margin_small_4dp">4dp</dimen>
