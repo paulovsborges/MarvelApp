@@ -2,6 +2,7 @@ package com.pvsb.marvelapp.framework.di
 
 import com.pvsb.marvelapp.BuildConfig
 import com.pvsb.marvelapp.framework.network.interceptor.MarvelApiInterceptor
+import com.pvsb.marvelapp.framework.network.service.MarvelService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -45,5 +46,8 @@ object NetworkModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
+
+    @Provides
+    fun provideService(retrofit: Retrofit): MarvelService = retrofit.create(MarvelService::class.java)
 
 }
