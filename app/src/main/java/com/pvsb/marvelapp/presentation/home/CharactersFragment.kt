@@ -76,7 +76,9 @@ class CharactersFragment : Fragment() {
                             setUpShimmer(false)
                             FLIPPER_CHILD_CHARACTERS
                         }
-                        is LoadState.Error -> FLIPPER_CHILD_ERROR
+                        is LoadState.Error -> {
+                            FLIPPER_CHILD_ERROR
+                        }
                     }
             }
         }
