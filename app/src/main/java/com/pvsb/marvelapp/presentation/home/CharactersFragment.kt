@@ -7,7 +7,9 @@ import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.paging.LoadState
 import com.pvsb.marvelapp.databinding.FragmentCharactersBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,7 +22,7 @@ class CharactersFragment : Fragment() {
 
     private var _binding: FragmentCharactersBinding? = null
     private val binding get() = _binding!!
-    private val mAdapter = MainAdapter()
+    private val mAdapter: MainAdapter by lazy { MainAdapter() }
     private val viewModel: CharactersVIewModel by viewModels()
 
     override fun onCreateView(
@@ -50,10 +52,12 @@ class CharactersFragment : Fragment() {
 
     private fun fetchData() {
         lifecycleScope.launch {
-            viewModel.charactersPagingData("")
-                .collect { pagingData ->
-                    mAdapter.submitData(pagingData)
-                }
+            viewLifecycleOwner.lifecycle.repeatOnLifecycle(Lifecycle.State.RESUMED) {
+                viewModel.charactersPagingData("")
+                    .collect { pagingData ->
+                        mAdapter.submitData(pagingData)
+                    }
+            }
         }
     }
 
