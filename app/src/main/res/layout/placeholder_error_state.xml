@@ -16,16 +16,15 @@
         app:srcCompat="@drawable/ic_avengers_2" />
 
     <TextView
-        android:layout_marginTop="@dimen/margin_medium_20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/icAvengers"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:text="@string/error_place_holder"
+        android:layout_marginTop="@dimen/margin_medium_20dp"
         android:fontFamily="@font/regular_font"
+        android:text="@string/error_place_holder"
         android:textColor="@color/black"
-        android:textSize="25sp"
-        />
+        android:textSize="@dimen/error_place_holder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icAvengers" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
