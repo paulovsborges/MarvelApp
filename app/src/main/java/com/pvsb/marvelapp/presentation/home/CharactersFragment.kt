@@ -42,6 +42,10 @@ class CharactersFragment : Fragment() {
         initAdapter()
         handleState()
         fetchData()
+
+        binding.includeError.swipeError.setOnRefreshListener {
+            fetchData()
+        }
     }
 
     private fun fetchData() {
@@ -77,6 +81,7 @@ class CharactersFragment : Fragment() {
                             FLIPPER_CHILD_CHARACTERS
                         }
                         is LoadState.Error -> {
+                            setUpShimmer(false)
                             FLIPPER_CHILD_ERROR
                         }
                     }
@@ -85,6 +90,7 @@ class CharactersFragment : Fragment() {
     }
 
     private fun setUpShimmer(visible: Boolean) {
+        binding.includeError.swipeError.isRefreshing = visible
         binding.includeLoadingState.shimmerCharacters.apply {
             isVisible = visible
             if (visible) startShimmer()

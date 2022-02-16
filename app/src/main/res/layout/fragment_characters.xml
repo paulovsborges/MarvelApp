@@ -154,5 +154,7 @@
             tools:listitem="@layout/characters_card_main" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <include layout="@layout/placeholder_error_state"/>
+    <include
+        android:id="@+id/includeError"
+        layout="@layout/placeholder_error_state" />
 </ViewFlipper>
