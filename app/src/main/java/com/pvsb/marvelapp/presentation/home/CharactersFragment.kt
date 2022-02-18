@@ -11,6 +11,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.paging.LoadState
+import androidx.recyclerview.widget.GridLayoutManager
 import com.pvsb.marvelapp.databinding.FragmentCharactersBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
@@ -64,7 +65,26 @@ class CharactersFragment : Fragment() {
     private fun initAdapter() {
 
         binding.homeRecycler.apply {
-            adapter = mAdapter
+
+            val loadFooter = LoadingStateAdapter { mAdapter.retry() }
+
+            val gridLayout = GridLayoutManager(
+                requireContext(),
+                2, GridLayoutManager.VERTICAL,
+                false
+            )
+
+            if (loadFooter.loadState is LoadState.Loading) {
+                gridLayout.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                    override fun getSpanSize(position: Int): Int {
+                        return 1
+                    }
+                }
+            }
+
+            val footerAdapter = mAdapter.withLoadStateFooter(loadFooter)
+            layoutManager = gridLayout
+            adapter = footerAdapter
             setHasFixedSize(true)
         }
     }
