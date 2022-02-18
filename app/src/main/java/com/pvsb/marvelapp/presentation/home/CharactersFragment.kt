@@ -74,11 +74,10 @@ class CharactersFragment : Fragment() {
                 false
             )
 
-            if (loadFooter.loadState is LoadState.Loading) {
-                gridLayout.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
-                    override fun getSpanSize(position: Int): Int {
-                        return 1
-                    }
+            gridLayout.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                override fun getSpanSize(position: Int): Int {
+                    val viewType = mAdapter.getItemViewType(position)
+                    return if(viewType == 1) 1 else 2
                 }
             }
 

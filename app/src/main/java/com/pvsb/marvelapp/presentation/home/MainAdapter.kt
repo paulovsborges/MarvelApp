@@ -16,4 +16,15 @@ class MainAdapter : PagingDataAdapter<Character, CharactersViewHolder>(BaseDiffU
             holder.bind(it)
         }
     }
+
+    override fun getItemViewType(position: Int): Int {
+        return if (position == itemCount) {
+            DATA
+        } else LOAD
+    }
+
+    companion object {
+        const val DATA = 2
+        const val LOAD = 1
+    }
 }
