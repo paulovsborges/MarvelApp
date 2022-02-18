@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:toDegrees="3000">
+
+    <selector
+        android:enterFadeDuration="100"
+        android:exitFadeDuration="100">
+
+        <item
+            android:drawable="@drawable/ic_avengers_highlight"
+            android:state_enabled="true" />
+    </selector>
+</rotate>
