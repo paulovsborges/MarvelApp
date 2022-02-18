@@ -4,8 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/drawable/custom_progress.xml" value="0.245" />
+        <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/drawable/custom_text_badge.xml" value="0.245" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/drawable/ic_avengers.xml" value="0.2445" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/drawable/ic_avengers_2.xml" value="0.245" />
+        <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/drawable/ic_avengers_highlight.xml" value="0.245" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/drawable/ic_characters_bottom_nav.xml" value="0.2857142857142857" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/drawable/ic_comics.xml" value="0.2445" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/drawable/ic_info.xml" value="0.2445" />
@@ -17,6 +19,7 @@
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/characters_card_main.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/characters_card_recycler.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/custom_progress.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/custom_text_badge.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/favorites_card.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/fragment_about.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/layout/fragment_characters.xml" value="0.3645833333333333" />
