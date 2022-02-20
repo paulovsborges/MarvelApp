@@ -52,6 +52,7 @@ android {
 dependencies {
 
     implementation project(':core')
+    testImplementation project(':test-module')
 
     // AndroidX
     implementation 'androidx.core:core-ktx:1.6.0'

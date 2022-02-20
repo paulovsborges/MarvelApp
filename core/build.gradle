@@ -10,6 +10,8 @@ java {
 
 dependencies {
 
+    testImplementation project(':test-module')
+
     // OkHttp
     api (platform ("com.squareup.okhttp3:okhttp-bom:4.9.0"))
     api "com.squareup.okhttp3:okhttp"

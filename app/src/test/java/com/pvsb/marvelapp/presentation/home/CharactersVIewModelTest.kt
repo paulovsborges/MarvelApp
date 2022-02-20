@@ -5,14 +5,14 @@ import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.whenever
 import com.pvsb.core.domain.model.Character
 import com.pvsb.core.usecase.CharactersUseCase
-import kotlinx.coroutines.Dispatchers
+import com.pvsb.testmodule.CoroutineRule
+import com.pvsb.testmodule.model.CharacterFactory
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.flowOf
-import kotlinx.coroutines.test.TestCoroutineDispatcher
 import kotlinx.coroutines.test.runBlockingTest
-import kotlinx.coroutines.test.setMain
 import org.junit.Assert
 import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
@@ -22,23 +22,25 @@ import org.mockito.junit.MockitoJUnitRunner
 @RunWith(MockitoJUnitRunner::class)
 class CharactersVIewModelTest {
 
-    private val testDispatcher: TestCoroutineDispatcher = TestCoroutineDispatcher()
+    @get:Rule
+    val coroutineRule = CoroutineRule()
 
     @Mock
     lateinit var useCase: CharactersUseCase
 
     private lateinit var charactersViewModel: CharactersVIewModel
 
+    private val charactersFactory = CharacterFactory()
+
     private val pagingDataCharacters = PagingData.from(
         listOf(
-            Character("iron man", "https://google.com"),
-            Character("thor", "https://google.com")
+            charactersFactory.create(CharacterFactory.Hero.IronMan),
+            charactersFactory.create(CharacterFactory.Hero.ABomb)
         )
     )
 
     @Before
     fun setUp() {
-        Dispatchers.setMain(testDispatcher)
         charactersViewModel = CharactersVIewModel(useCase)
     }
 
@@ -59,7 +61,7 @@ class CharactersVIewModelTest {
         }
 
     @Test(expected = RuntimeException::class)
-    fun `should throw an exception`() = runBlockingTest{
+    fun `should throw an exception`() = runBlockingTest {
 
         whenever(useCase.invoke(any())).thenThrow(RuntimeException())
 
