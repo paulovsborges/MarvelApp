@@ -98,15 +98,15 @@ class CharactersFragment : Fragment() {
                     when (state.refresh) {
                         is LoadState.Loading -> {
                             setUpShimmer(true)
-                            FLIPPER_CHILD_LOAD
+                            FLIPPER_LOAD
                         }
                         is LoadState.NotLoading -> {
                             setUpShimmer(false)
-                            FLIPPER_CHILD_CHARACTERS
+                            FLIPPER_DATA
                         }
                         is LoadState.Error -> {
                             setUpShimmer(false)
-                            FLIPPER_CHILD_ERROR
+                            FLIPPER_ERROR
                         }
                     }
             }
@@ -123,8 +123,8 @@ class CharactersFragment : Fragment() {
     }
 
     companion object {
-        const val FLIPPER_CHILD_LOAD = 0
-        const val FLIPPER_CHILD_CHARACTERS = 1
-        const val FLIPPER_CHILD_ERROR = 2
+        const val FLIPPER_LOAD = 0
+        const val FLIPPER_DATA = 1
+        const val FLIPPER_ERROR = 2
     }
 }
