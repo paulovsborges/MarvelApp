@@ -65,6 +65,5 @@ class CharactersVIewModelTest {
         whenever(useCase.invoke(any())).thenThrow(RuntimeException())
 
         charactersViewModel.charactersPagingData("")
-
     }
 }

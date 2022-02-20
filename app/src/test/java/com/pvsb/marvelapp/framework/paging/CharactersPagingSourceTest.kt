@@ -4,6 +4,7 @@ import androidx.paging.PagingSource
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.whenever
 import com.pvsb.core.data.repository.CharactersRemoteDataSource
+import com.pvsb.core.domain.model.Character
 import com.pvsb.marvelapp.factory.response.DataWrapperResponseFactory
 import com.pvsb.marvelapp.framework.network.model.DataWrapperResponse
 import com.pvsb.testmodule.CoroutineRule
@@ -17,6 +18,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mock
 import org.mockito.junit.MockitoJUnitRunner
+import java.lang.RuntimeException
 
 @ExperimentalCoroutinesApi
 @RunWith(MockitoJUnitRunner::class)
@@ -25,7 +27,7 @@ class CharactersPagingSourceTest {
     @get:Rule
     val coroutineRule = CoroutineRule()
 
-    private lateinit var charactersPagingSource: CharactersPagingSource
+    private lateinit var pagingSource: CharactersPagingSource
 
     @Mock
     private lateinit var remoteDataSource: CharactersRemoteDataSource<DataWrapperResponse>
@@ -34,7 +36,7 @@ class CharactersPagingSourceTest {
 
     @Before
     fun setUp() {
-        charactersPagingSource = CharactersPagingSource(remoteDataSource, "")
+        pagingSource = CharactersPagingSource(remoteDataSource, "")
     }
 
     @Test
@@ -42,7 +44,7 @@ class CharactersPagingSourceTest {
 
         whenever(remoteDataSource.fetchCharacters(any())).thenReturn(dataFactory)
 
-        val result = charactersPagingSource.load(
+        val result = pagingSource.load(
             PagingSource.LoadParams.Refresh(
                 null,
                 2, false
@@ -59,5 +61,20 @@ class CharactersPagingSourceTest {
         )
 
         Assert.assertEquals(expected, result)
+    }
+
+    @Test
+    fun `should return an error result`() = runBlockingTest {
+
+        val exception = RuntimeException()
+        whenever(remoteDataSource.fetchCharacters(any())).thenThrow(exception)
+
+        val result = pagingSource.load(
+            PagingSource.LoadParams.Refresh(
+                null, 2, false
+            )
+        )
+
+        Assert.assertEquals(PagingSource.LoadResult.Error<Int, Character>(exception), result)
     }
 }
