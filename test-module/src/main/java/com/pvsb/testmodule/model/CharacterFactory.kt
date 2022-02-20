@@ -6,10 +6,10 @@ class CharacterFactory {
 
     fun create(hero: Hero)  = when(hero)  {
         Hero.IronMan ->{
-            Character("iron man", "https://google.com")
+            Character("iron man", "google.com/standard_amazing.jpg")
         }
         Hero.ABomb ->{
-            Character("A-Bomb", "https://google.com")
+            Character("A-Bomb", "google.com/standard_amazing.jpg")
         }
     }
 
