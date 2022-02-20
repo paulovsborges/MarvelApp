@@ -3,7 +3,6 @@ package com.pvsb.marvelapp.presentation.home
 import androidx.paging.PagingData
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.whenever
-import com.pvsb.core.domain.model.Character
 import com.pvsb.core.usecase.CharactersUseCase
 import com.pvsb.testmodule.CoroutineRule
 import com.pvsb.testmodule.model.CharacterFactory
