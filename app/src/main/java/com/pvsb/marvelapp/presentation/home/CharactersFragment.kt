@@ -84,6 +84,7 @@ class CharactersFragment : Fragment() {
             val footerAdapter = mAdapter.withLoadStateFooter(loadFooter)
             layoutManager = gridLayout
             adapter = footerAdapter
+            scrollToPosition(0)
             setHasFixedSize(true)
         }
     }
