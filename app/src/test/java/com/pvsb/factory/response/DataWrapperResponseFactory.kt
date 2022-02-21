@@ -1,4 +1,4 @@
-package com.pvsb.marvelapp.factory.response
+package com.pvsb.factory.response
 
 import com.pvsb.marvelapp.framework.network.model.CharactersResponse
 import com.pvsb.marvelapp.framework.network.model.ContainerResponse

@@ -1,12 +1,13 @@
-package com.pvsb.marvelapp.framework.paging
+package com.pvsb.mockito.marvelapp.framework.paging
 
 import androidx.paging.PagingSource
 import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.whenever
 import com.pvsb.core.data.repository.CharactersRemoteDataSource
 import com.pvsb.core.domain.model.Character
-import com.pvsb.marvelapp.factory.response.DataWrapperResponseFactory
+import com.pvsb.factory.response.DataWrapperResponseFactory
 import com.pvsb.marvelapp.framework.network.model.DataWrapperResponse
+import com.pvsb.marvelapp.framework.paging.CharactersPagingSource
 import com.pvsb.testmodule.CoroutineRule
 import com.pvsb.testmodule.model.CharacterFactory
 import kotlinx.coroutines.ExperimentalCoroutinesApi

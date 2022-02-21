@@ -1,4 +1,4 @@
-package com.pvsb.core.usecase
+package com.pvsb.mockito.core.usecase
 
 import androidx.paging.PagingConfig
 import androidx.paging.PagingSource
@@ -6,6 +6,8 @@ import com.nhaarman.mockitokotlin2.times
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import com.pvsb.core.data.repository.CharactersRepository
+import com.pvsb.core.usecase.CharactersUseCase
+import com.pvsb.core.usecase.CharactersUseCaseImpl
 import com.pvsb.testmodule.CoroutineRule
 import com.pvsb.testmodule.model.CharacterFactory
 import com.pvsb.testmodule.pagingsource.PagingSourceFactory

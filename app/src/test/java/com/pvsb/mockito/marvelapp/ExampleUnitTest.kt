@@ -1,4 +1,4 @@
-package com.pvsb.marvelapp
+package com.pvsb.mockito.marvelapp
 
 import org.junit.Test
 
