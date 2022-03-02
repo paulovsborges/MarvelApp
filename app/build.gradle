@@ -13,16 +13,20 @@ def apiKeyPropertiesFile = rootProject.file("apiKey.properties")
 def apiKeyProperties = new Properties()
 apiKeyProperties.load(new FileInputStream(apiKeyPropertiesFile))
 
+def signingConfigFile = rootProject.file("signingconfig.properties")
+def signingConfigProperties = new Properties()
+signingConfigProperties.load(new FileInputStream(signingConfigFile))
+
 android {
 
     compileSdk 32
 
     signingConfigs {
         release {
-            storeFile file('C:\\Users\\Paulo Borges\\StudioProjects\\MarvelApp\\store\\marvel_app_key_store.jks')
-            storePassword 'BassTrombone2317'
-            keyAlias 'marvel-app'
-            keyPassword 'BassTrombone2317'
+            storeFile file(signingConfigProperties['FILE_LOCATION'])
+            storePassword signingConfigProperties['MAIN_PASSWORD']
+            keyAlias signingConfigProperties['KEY_ALIAS']
+            keyPassword signingConfigProperties['MAIN_PASSWORD']
         }
     }
 
