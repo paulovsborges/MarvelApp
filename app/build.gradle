@@ -13,6 +13,10 @@ def apiKeyPropertiesFile = rootProject.file("apiKey.properties")
 def apiKeyProperties = new Properties()
 apiKeyProperties.load(new FileInputStream(apiKeyPropertiesFile))
 
+def signingConfigPropertiesFile = rootProject.file("signingconfig.properties")
+def signingConfigProperties = new Properties()
+signingConfigProperties.load(new FileInputStream(signingConfigPropertiesFile))
+
 android {
 
     compileSdk 32
