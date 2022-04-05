@@ -49,7 +49,7 @@ android {
         staging{
             initWith debug
             minifyEnabled true
-            applicationIdSuffix '.stagging'
+            applicationIdSuffix '.staging'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro',
             'proguard-rules-staging.pro'
         }
