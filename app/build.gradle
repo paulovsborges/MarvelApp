@@ -19,7 +19,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('C:\\Users\\Paulo Borges\\StudioProjects\\MarvelApp\\store\\marvel_app_key_store.jks')
+            storeFile file("$rootDir/store/marvel_app_key_store.jks")
             storePassword 'BassTrombone2317'
             keyAlias 'marvel-app'
             keyPassword 'BassTrombone2317'
@@ -34,7 +34,6 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
         buildConfigField "String", "PUBLIC_KEY", apiKeyProperties['PUBLIC_KEY']
         buildConfigField "String", "PRIVATE_KEY", apiKeyProperties['PRIVATE_KEY']
         buildConfigField "String", "BASE_URL", '"https://gateway.marvel.com/v1/public/"'
