@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
@@ -41,16 +42,16 @@ android {
 
     buildTypes {
 
-        debug{
+        debug {
             applicationIdSuffix '.debug'
             debuggable true
         }
-        staging{
+        staging {
             initWith debug
             minifyEnabled true
             applicationIdSuffix '.staging'
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro',
-            'proguard-rules-staging.pro'
+                    'proguard-rules-staging.pro'
         }
         release {
             signingConfig signingConfigs.release
@@ -124,6 +125,10 @@ dependencies {
 
     // SplashScreen
     implementation "androidx.core:core-splashscreen:1.0.0-beta01"
+
+    // Firebase
+    implementation platform('com.google.firebase:firebase-bom:29.2.1')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
 
     // Unit tests
     testImplementation 'junit:junit:4.13.1'
