@@ -32,6 +32,8 @@
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/menu/nav_bottom_menu.xml" value="0.37864583333333335" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/mipmap-anydpi-v26/ic_avengers_launch.xml" value="0.192" />
         <entry key="..\:/Users/Paulo Borges/StudioProjects/MarvelApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.192" />
+        <entry key="..\:/Users/Public/MarvelApp/app/src/main/res/layout/fragment_characters.xml" value="0.37864583333333335" />
+        <entry key="..\:/Users/Public/MarvelApp/app/src/main/res/layout/include_view_characters_loading.xml" value="0.37864583333333335" />
       </map>
     </option>
   </component>
