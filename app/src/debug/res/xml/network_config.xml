@@ -1,0 +1,7 @@
+<?xml version="1.0" encodig="utf-8"?>
+<network_config>
+    <base-config clearTextTrafficPermitted="false" />
+    <domain-config clearTextTrafficPermitted="true">
+        <comain includeSubdomains="true">localhost</comain>
+    </domain-config>
+</network_config>

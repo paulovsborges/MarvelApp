@@ -21,7 +21,8 @@
     <application android:icon="@mipmap/ic_avengers_launch"
         tools:replace="android:theme"
         android:theme="@style/Theme.AppCompat"
-        >
+        android:networkSecurityConfig="@xml/network_config"
+        tools:targetApi="n">
         <activity
             android:name=".HiltTestActivity"
             android:exported="false" />
