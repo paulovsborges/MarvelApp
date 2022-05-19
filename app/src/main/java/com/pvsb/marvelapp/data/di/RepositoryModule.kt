@@ -1,10 +1,10 @@
-package com.pvsb.marvelapp.framework.di
+package com.pvsb.marvelapp.data.di
 
 import com.pvsb.core.data.repository.CharactersRemoteDataSource
 import com.pvsb.core.data.repository.CharactersRepository
-import com.pvsb.marvelapp.framework.network.model.DataWrapperResponse
-import com.pvsb.marvelapp.framework.network.remote.RemoteCharactersDataSource
-import com.pvsb.marvelapp.framework.network.repository.CharactersRepositoryImpl
+import com.pvsb.marvelapp.data.network.model.DataWrapperResponse
+import com.pvsb.marvelapp.data.network.remote.RemoteCharactersDataSource
+import com.pvsb.marvelapp.data.network.repository.CharactersRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

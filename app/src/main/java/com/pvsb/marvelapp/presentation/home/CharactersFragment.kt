@@ -10,9 +10,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import androidx.recyclerview.widget.GridLayoutManager
 import com.pvsb.marvelapp.databinding.FragmentCharactersBinding
+import com.pvsb.marvelapp.presentation.model.CharacterDetailNavArg
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
@@ -23,7 +25,16 @@ class CharactersFragment : Fragment() {
 
     private var _binding: FragmentCharactersBinding? = null
     private val binding get() = _binding!!
-    private val mAdapter: MainAdapter by lazy { MainAdapter() }
+    private val mAdapter: MainAdapter by lazy {
+        MainAdapter() {
+
+            findNavController().navigate(
+                CharactersFragmentDirections.actionCharactersFragmentToCharacterDetail(
+                    CharacterDetailNavArg(it.id, it.name, it.image)
+                )
+            )
+        }
+    }
     private val viewModel: CharactersVIewModel by viewModels()
 
     override fun onCreateView(
@@ -77,7 +88,7 @@ class CharactersFragment : Fragment() {
             gridLayout.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
                 override fun getSpanSize(position: Int): Int {
                     val viewType = mAdapter.getItemViewType(position)
-                    return if(viewType == 1) 1 else 2
+                    return if (viewType == 1) 1 else 2
                 }
             }
 
@@ -120,6 +131,11 @@ class CharactersFragment : Fragment() {
             if (visible) startShimmer()
             else stopShimmer()
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
     companion object {

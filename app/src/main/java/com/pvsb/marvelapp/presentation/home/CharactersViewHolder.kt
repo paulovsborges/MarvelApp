@@ -8,7 +8,10 @@ import com.pvsb.core.domain.model.Character
 import com.pvsb.marvelapp.R
 import com.pvsb.marvelapp.databinding.CharactersCardMainBinding
 
-class CharactersViewHolder(private val binding: CharactersCardMainBinding) :
+class CharactersViewHolder(
+    private val binding: CharactersCardMainBinding,
+    private val onCLick: (Character) -> Unit
+) :
     RecyclerView.ViewHolder(binding.root) {
 
     private val name = binding.characterName
@@ -22,17 +25,21 @@ class CharactersViewHolder(private val binding: CharactersCardMainBinding) :
             .placeholder(R.drawable.ic_avengers)
             .centerCrop()
             .into(image)
+
+        itemView.setOnClickListener {
+            onCLick(item)
+        }
     }
 
     companion object {
 
-        fun inflate(parent: ViewGroup): CharactersViewHolder {
+        fun inflate(parent: ViewGroup, onCLick: (Character) -> Unit): CharactersViewHolder {
             val binding = CharactersCardMainBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
             )
-            return CharactersViewHolder(binding)
+            return CharactersViewHolder(binding, onCLick)
         }
     }
 }

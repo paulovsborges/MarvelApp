@@ -1,4 +1,4 @@
-package com.pvsb.marvelapp.framework.network.model
+package com.pvsb.marvelapp.data.network.model
 
 import com.google.gson.annotations.SerializedName
 

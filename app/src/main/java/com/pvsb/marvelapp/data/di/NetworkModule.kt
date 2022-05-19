@@ -1,8 +1,8 @@
-package com.pvsb.marvelapp.framework.di
+package com.pvsb.marvelapp.data.di
 
 import com.pvsb.marvelapp.BuildConfig
-import com.pvsb.marvelapp.framework.network.interceptor.MarvelApiInterceptor
-import com.pvsb.marvelapp.framework.network.service.MarvelService
+import com.pvsb.marvelapp.data.network.interceptor.MarvelApiInterceptor
+import com.pvsb.marvelapp.data.network.service.MarvelService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

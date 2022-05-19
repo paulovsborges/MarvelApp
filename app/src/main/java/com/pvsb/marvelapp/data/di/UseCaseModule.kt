@@ -1,4 +1,4 @@
-package com.pvsb.marvelapp.framework.di
+package com.pvsb.marvelapp.data.di
 
 import com.pvsb.core.usecase.CharactersUseCase
 import com.pvsb.core.usecase.CharactersUseCaseImpl

@@ -1,8 +1,8 @@
-package com.pvsb.marvelapp.framework.paging
+package com.pvsb.marvelapp.data.paging
 
 import com.pvsb.core.domain.model.Character
-import com.pvsb.marvelapp.framework.network.model.CharactersResponse
-import com.pvsb.marvelapp.framework.network.model.ImagesResponse
+import com.pvsb.marvelapp.data.network.model.CharactersResponse
+import com.pvsb.marvelapp.data.network.model.ImagesResponse
 
 object CharactersResponseMapper {
 
@@ -10,6 +10,7 @@ object CharactersResponseMapper {
         source.map { character ->
             character.run {
                 Character(
+                    id = id,
                     name = name,
                     image = characterImage(thumbnail)
                 )

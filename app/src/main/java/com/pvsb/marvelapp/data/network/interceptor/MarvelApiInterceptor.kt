@@ -1,4 +1,4 @@
-package com.pvsb.marvelapp.framework.network.interceptor
+package com.pvsb.marvelapp.data.network.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Response

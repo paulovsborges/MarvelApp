@@ -1,10 +1,10 @@
-package com.pvsb.marvelapp.framework.paging
+package com.pvsb.marvelapp.data.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.pvsb.core.data.repository.CharactersRemoteDataSource
 import com.pvsb.core.domain.model.Character
-import com.pvsb.marvelapp.framework.network.model.DataWrapperResponse
+import com.pvsb.marvelapp.data.network.model.DataWrapperResponse
 import javax.inject.Inject
 
 class CharactersPagingSource @Inject constructor(

@@ -1,9 +1,9 @@
 package com.pvsb.factory.response
 
-import com.pvsb.marvelapp.framework.network.model.CharactersResponse
-import com.pvsb.marvelapp.framework.network.model.ContainerResponse
-import com.pvsb.marvelapp.framework.network.model.DataWrapperResponse
-import com.pvsb.marvelapp.framework.network.model.ImagesResponse
+import com.pvsb.marvelapp.data.network.model.CharactersResponse
+import com.pvsb.marvelapp.data.network.model.ContainerResponse
+import com.pvsb.marvelapp.data.network.model.DataWrapperResponse
+import com.pvsb.marvelapp.data.network.model.ImagesResponse
 
 class DataWrapperResponseFactory {
 

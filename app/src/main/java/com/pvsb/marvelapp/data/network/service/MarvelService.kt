@@ -1,6 +1,6 @@
-package com.pvsb.marvelapp.framework.network.service
+package com.pvsb.marvelapp.data.network.service
 
-import com.pvsb.marvelapp.framework.network.model.DataWrapperResponse
+import com.pvsb.marvelapp.data.network.model.DataWrapperResponse
 import retrofit2.http.GET
 import retrofit2.http.QueryMap
 

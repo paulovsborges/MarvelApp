@@ -64,6 +64,7 @@
             android:id="@+id/replaceView"
             android:layout_width="match_parent"
             android:layout_height="@dimen/little_size_70dp"
+            android:translationZ="@dimen/padding_medium_10dp"
             app:layout_constraintTop_toTopOf="parent">
 
             <View
